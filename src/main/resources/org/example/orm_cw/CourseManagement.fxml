@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="539.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.orm_cw.Controller.CourseManagementController">
+
+    <!-- Title Label -->
+    <Label layoutX="203.0" layoutY="17.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Course Management" />
+
+    <!-- Back Button -->
+    <Button layoutX="20.0" layoutY="20.0" onAction="#goBack" text="Back" />
+
+    <!-- Input Fields Section -->
+    <VBox layoutX="50" layoutY="60" prefHeight="160.0" prefWidth="563.0" spacing="10">
+        <HBox alignment="TOP_CENTER" spacing="10">
+            <Label text="Course ID:" />
+            <TextField fx:id="courseIdField" prefHeight="24.0" prefWidth="226.0" />
+        </HBox>
+        <HBox alignment="TOP_CENTER" spacing="10">
+            <Label text="Course Name:" />
+            <TextField fx:id="courseNameField" prefWidth="200" />
+        </HBox>
+        <HBox alignment="TOP_CENTER" spacing="10">
+            <Label text="Duration:" />
+            <TextField fx:id="durationField" prefHeight="24.0" prefWidth="233.0" />
+        </HBox>
+        <HBox alignment="TOP_CENTER" spacing="10">
+            <Label text="Fee:" />
+            <TextField fx:id="feeField" prefHeight="24.0" prefWidth="263.0" />
+        </HBox>
+
+        <!-- Buttons for Actions -->
+        <HBox alignment="TOP_CENTER" spacing="10">
+            <Button onAction="#saveCourse" text="Save" />
+            <Button onAction="#updateCourse" text="Update" />
+            <Button onAction="#deleteCourse" text="Delete" />
+            <Button onAction="#clearFields" text="Clear" />
+        </HBox>
+    </VBox>
+
+    <!-- Course Table Section -->
+    <TableView fx:id="courseTable" layoutX="31.0" layoutY="231.0" prefHeight="300" prefWidth="635.0">
+        <columns>
+            <TableColumn fx:id="courseIdColumn" prefWidth="100" text="Course ID" />
+            <TableColumn fx:id="courseNameColumn" prefWidth="220.0" text="Course Name" />
+            <TableColumn fx:id="durationColumn" prefWidth="142.0" text="Duration" />
+            <TableColumn fx:id="feeColumn" prefWidth="172.0" text="Fee" />
+        </columns>
+    </TableView>
+</AnchorPane>

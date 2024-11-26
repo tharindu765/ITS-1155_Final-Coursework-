@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.orm_cw.Controller.LoginFromController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <!-- Title Label -->
+    <Label text="Login" layoutX="250" layoutY="40" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <!-- Username Field -->
+    <Label text="Username:" layoutX="150" layoutY="100"/>
+    <TextField fx:id="usernameField" layoutX="250" layoutY="100" prefWidth="200"/>
+
+    <!-- Password Field -->
+    <Label text="Password:" layoutX="150" layoutY="150"/>
+    <PasswordField fx:id="passwordField" layoutX="250" layoutY="150" prefWidth="200"/>
+
+    <!-- Login Button -->
+    <Button text="Login" layoutX="250" layoutY="200" prefWidth="200" onAction="#handleLogin"/>
+
+    <!-- Forgot Password Link -->
+    <Hyperlink text="Forgot Password?" layoutX="250" layoutY="250" onAction="#handleForgotPassword"/>
+
+</AnchorPane>
