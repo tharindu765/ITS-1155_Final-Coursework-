@@ -200,18 +200,24 @@ public class StudentManagementController {
     }
 
     private boolean isValidInput() {
-        if (nameField.getText().isEmpty() || emailField.getText().isEmpty() || phoneField.getText().isEmpty()) {
-            showAlert("Input Error", "All fields must be filled.");
+        // Validate Name (Only letters and spaces, minimum 2 characters)
+        if (!nameField.getText().matches("^[A-Za-z ]{2,}$")) {
+            showAlert("Input Error", "Name must contain only letters and spaces, and be at least 2 characters long.");
             return false;
         }
-        if (!emailField.getText().contains("@")) {
+
+        // Validate Email (Basic email regex for format validation)
+        if (!emailField.getText().matches("^[\\w._%+-]+@[\\w.-]+\\.[A-Za-z]{2,6}$")) {
             showAlert("Input Error", "Please enter a valid email address.");
             return false;
         }
-        if (!phoneField.getText().matches("\\d{10}")) {
-            showAlert("Input Error", "Please enter a valid 10-digit phone number.");
+
+        // Validate Phone Number (10 digits, can include dashes or spaces for formatting)
+        if (!phoneField.getText().matches("^(\\d{10}|\\d{3}[-\\s]\\d{3}[-\\s]\\d{4})$")) {
+            showAlert("Input Error", "Please enter a valid 10-digit phone number. You may use dashes or spaces for formatting.");
             return false;
         }
+
         return true;
     }
 

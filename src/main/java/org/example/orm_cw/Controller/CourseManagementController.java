@@ -185,6 +185,21 @@ public class CourseManagementController {
             showAlert("Invalid Input", "Please enter a valid number for the fee.");
             return false;
         }
+        if (courseNameField.getText().isEmpty()) {
+            showAlert("Invalid Input", "Course Name cannot be empty.");
+            return false;
+        }
+
+        if (durationField.getText().isEmpty() || !durationField.getText().matches("^\\d+\\s(weeks|months)$")) {
+            showAlert("Invalid Input", "Duration must be in the format 'X weeks' or 'X months' (e.g., '12 weeks').");
+            return false;
+        }
+
+        if (feeField.getText().isEmpty() || !feeField.getText().matches("^\\d+(\\.\\d{1,2})?$")) {
+            showAlert("Invalid Input", "Fee must be a positive number with up to two decimal places (e.g., '500' or '500.99').");
+            return false;
+        }
+
         return true;
     }
 

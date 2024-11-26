@@ -172,12 +172,25 @@ public class UserManagementController {
             showAlert("Input Error", "All fields must be filled.");
             return false;
         }
-
-        String password = passwordField.getText();
-        if (password.length() < 6) {
-            showAlert("Password Error", "Password must be at least 6 characters long.");
+        // Validate Username (Letters, numbers, underscores, 3-15 characters)
+        if (!usernameField.getText().matches("^[a-zA-Z0-9_]{3,15}$")) {
+            showAlert("Input Error", "Username must be 3-15 characters long and can only contain letters, numbers, and underscores.");
             return false;
         }
+
+        // Validate Password (At least 6 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character)
+        String password = passwordField.getText();
+        if (!password.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,}$")) {
+            showAlert("Password Error", "Password must be at least 6 characters long, include an uppercase letter, a lowercase letter, a number, and a special character.");
+            return false;
+        }
+
+        // Validate Role Selection (Ensure a value is selected from the ComboBox)
+        if (roleComboBox.getValue() == null) {
+            showAlert("Role Error", "Please select a role.");
+            return false;
+        }
+
         return true;
     }
 

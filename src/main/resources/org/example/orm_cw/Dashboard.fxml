@@ -9,18 +9,18 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.orm_cw.Controller.DashboardController">
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #2a2a2a; -fx-text-fill: #e0e0e0;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.orm_cw.Controller.DashboardController">
 
     <!-- Menu Bar -->
     <top>
-        <MenuBar>
-            <Menu text="File">
-                <MenuItem onAction="#logout" text="Logout" />
+        <MenuBar style="-fx-background-color: #333333;">
+            <Menu style="-fx-background-color: #ffaa00;" text="File">
+                <MenuItem onAction="#logout" style="-fx-background-color: #ffaa00; -fx-text-fill: #000000;" text="Logout" />
             </Menu>
-            <Menu text="Manage">
-                <MenuItem onAction="#showStudentList" text="Students" />
-                <MenuItem onAction="#showCourseList" text="Courses" />
-            <MenuItem onAction="#userManage" text="Users" />
+            <Menu style="-fx-background-color: #ffaa00;" text="Manage">
+                <MenuItem onAction="#showStudentList" style="-fx-background-color: #ffaa00; -fx-text-fill: #000000;" text="Students" />
+                <MenuItem onAction="#showCourseList" style="-fx-background-color: #ffaa00; -fx-text-fill: #000000;" text="Courses" />
+                <MenuItem onAction="#userManage" style="-fx-background-color: #ffaa00; -fx-text-fill: #000000;" text="Users" />
             </Menu>
         </MenuBar>
     </top>
@@ -28,18 +28,18 @@
     <!-- Content Area -->
     <center>
         <VBox alignment="CENTER" spacing="20">
-            <Label style="-fx-font-size: 18px; -fx-padding: 20px; -fx-text-fill: darkslategray;" text="Welcome to the Culinary Academy Management System" />
+            <Label style="-fx-font-size: 18px; -fx-padding: 20px; -fx-text-fill: #ffaa00;" text="Welcome to the Culinary Academy Management System" />
 
             <HBox alignment="CENTER" spacing="30">
                 <VBox alignment="CENTER" spacing="10">
-                    <Label style="-fx-font-size: 16px;" text="Total Students:" />
-                    <Label fx:id="studentCountLabel" style="-fx-font-size: 24px; -fx-text-fill: teal;" text="0" />
-                    <Button onAction="#goToAddStudentForm" text="Add New Student" />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #ffffff;" text="Total Students:" />
+                    <Label fx:id="studentCountLabel" style="-fx-font-size: 24px; -fx-text-fill: #00b3b3;" text="0" />
+                    <Button onAction="#goToAddStudentForm" style="-fx-background-color: #333333; -fx-text-fill: #ffaa00;" text="Add New Student" />
                 </VBox>
                 <VBox alignment="CENTER" spacing="10">
-                    <Label style="-fx-font-size: 16px;" text="Total Courses:" />
-                    <Label fx:id="courseCountLabel" style="-fx-font-size: 24px; -fx-text-fill: teal;" text="0" />
-                    <Button onAction="#goToAddCourseForm" text="Add New Course" />
+                    <Label style="-fx-font-size: 16px; -fx-text-fill: #ffffff;" text="Total Courses:" />
+                    <Label fx:id="courseCountLabel" style="-fx-font-size: 24px; -fx-text-fill: #00b3b3;" text="0" />
+                    <Button onAction="#goToAddCourseForm" style="-fx-background-color: #333333; -fx-text-fill: #ffaa00;" text="Add New Course" />
                 </VBox>
             </HBox>
         </VBox>

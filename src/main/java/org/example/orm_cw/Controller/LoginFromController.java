@@ -61,7 +61,7 @@ public class LoginFromController {
 
     private boolean authenticate(String username, String password) {
         try {
-            UserDto user = userBO.getUserByUsername(username); // Fetch user by username
+            UserDto user = userBO.getUserByUsername(username);
             if (user != null && PasswordUtil.checkPassword(password, user.getPassword())) {
                 return true; // Authentication successful
             }

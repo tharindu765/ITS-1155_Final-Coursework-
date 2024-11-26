@@ -4,15 +4,13 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class PasswordUtil {
 
-    // Hash a password with bcrypt
+    // Hashing a password with salt
     public static String hashPassword(String password) {
-        // Generate a salt and hash the password
-        return BCrypt.hashpw(password, BCrypt.gensalt(12)); // 12 rounds for bcrypt
+        return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
-    // Check if a password matches the stored hash
+    // Checking the password with the stored hash
     public static boolean checkPassword(String password, String storedHash) {
-        // Check if the given password matches the hashed password
         return BCrypt.checkpw(password, storedHash);
     }
 }

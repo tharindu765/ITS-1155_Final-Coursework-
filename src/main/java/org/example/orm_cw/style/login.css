@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* TableView row styling */
+.table-row-cell {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:filled:hover {
+    -fx-background-color: #555555; /* Lighten background on hover */
+}
+
+/* General styling for the TableView and columns */
+.table-view {
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: white;
+}
+
+.table-column {
+    -fx-text-fill: #ffffff;
+}
+
+/* Background styling for the scene or components */
+.root {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #ffffff;
+}

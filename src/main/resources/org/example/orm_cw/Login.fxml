@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.orm_cw.Controller.LoginFromController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1e1e1e;" stylesheets="@../java/org/example/orm_cw/style/login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.orm_cw.Controller.LoginFromController">
 
     <!-- Title Label -->
-    <Label text="Login" layoutX="250" layoutY="40" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Label layoutX="250" layoutY="40" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Login" textFill="#e0e0e0" />
 
     <!-- Username Field -->
-    <Label text="Username:" layoutX="150" layoutY="100"/>
-    <TextField fx:id="usernameField" layoutX="250" layoutY="100" prefWidth="200"/>
+    <Label layoutX="150" layoutY="100" text="Username:" textFill="#e0e0e0" />
+    <TextField fx:id="usernameField" layoutX="250" layoutY="100" prefWidth="200" style="-fx-background-color: #2a2a2a; -fx-border-color: #555555; -fx-text-fill: #e0e0e0;" />
 
     <!-- Password Field -->
-    <Label text="Password:" layoutX="150" layoutY="150"/>
-    <PasswordField fx:id="passwordField" layoutX="250" layoutY="150" prefWidth="200"/>
+    <Label layoutX="150" layoutY="150" text="Password:" textFill="#e0e0e0" />
+    <PasswordField fx:id="passwordField" layoutX="250" layoutY="150" prefWidth="200" style="-fx-background-color: #2a2a2a; -fx-border-color: #555555; -fx-text-fill: gold;" />
 
     <!-- Login Button -->
-    <Button text="Login" layoutX="250" layoutY="200" prefWidth="200" onAction="#handleLogin"/>
+    <Button layoutX="250" layoutY="200" onAction="#handleLogin" prefWidth="200" style="-fx-background-color: #333333;" text="Login" textFill="#e0e0e0" />
 
     <!-- Forgot Password Link -->
-    <Hyperlink text="Forgot Password?" layoutX="250" layoutY="250" onAction="#handleForgotPassword"/>
+    <Hyperlink layoutX="250" layoutY="250" onAction="#handleForgotPassword" text="Forgot Password?" textFill="#ffaa00" />
 
 </AnchorPane>

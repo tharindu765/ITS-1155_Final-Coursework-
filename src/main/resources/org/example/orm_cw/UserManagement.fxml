@@ -11,41 +11,43 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="548.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.orm_cw.Controller.UserManagementController">
+<AnchorPane prefHeight="548.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.orm_cw.Controller.UserManagementController">
 
     <!-- Title -->
-    <Label layoutX="350" layoutY="20" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="User Management" />
+    <Label layoutX="350" layoutY="20" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e0e0e0;" text="User Management" />
 
     <!-- Form Section -->
     <VBox alignment="CENTER" layoutX="20.0" layoutY="50.0" prefHeight="180.0" prefWidth="860.0" spacing="10">
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Username:" />
-            <TextField fx:id="usernameField" prefHeight="24.0" prefWidth="262.0" />
+            <Label style="-fx-text-fill: #ffffff;" text="Username:" />
+            <TextField fx:id="usernameField" prefHeight="24.0" prefWidth="262.0" style="-fx-background-color: #2a2a2a; -fx-text-fill: #ffffff; -fx-border-color: #555555;" />
         </HBox>
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Password:" />
-            <PasswordField fx:id="passwordField" prefHeight="24.0" prefWidth="270.0" />
+            <Label style="-fx-text-fill: #ffffff;" text="Password:" />
+            <PasswordField fx:id="passwordField" prefHeight="24.0" prefWidth="270.0" style="-fx-background-color: #2a2a2a; -fx-text-fill: #ffffff; -fx-border-color: #555555;" />
         </HBox>
         <HBox alignment="CENTER" spacing="10">
-            <Label text="Role:" />
-            <ComboBox fx:id="roleComboBox" prefWidth="300.0" />
+            <Label style="-fx-text-fill: white;" text="Role:" />
+            <ComboBox fx:id="roleComboBox" prefWidth="300.0" style="-fx-background-color: #2a2a2a; -fx-text-fill: white; -fx-border-color: #555555;" />
         </HBox>
         <!-- Action Buttons -->
         <HBox alignment="CENTER" spacing="10">
-            <Button fx:id="saveButton" onAction="#saveUser" text="Save" />
-            <Button fx:id="updateButton" onAction="#updateUser" text="Update" />
-            <Button fx:id="deleteButton" onAction="#deleteUser" text="Delete" />
-            <Button fx:id="clearButton" onAction="#clearFields" text="Clear" />
+            <Button fx:id="saveButton" onAction="#saveUser" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;" text="Save" />
+            <Button fx:id="updateButton" onAction="#updateUser" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;" text="Update" />
+            <Button fx:id="deleteButton" onAction="#deleteUser" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;" text="Delete" />
+            <Button fx:id="clearButton" onAction="#clearFields" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;" text="Clear" />
         </HBox>
     </VBox>
 
     <!-- Table Section -->
     <TableView fx:id="userTable" layoutX="39.0" layoutY="244.0" prefHeight="280.0" prefWidth="800.0">
         <columns>
-            <TableColumn fx:id="idColumn" prefWidth="248.0" text="User ID" />
-            <TableColumn fx:id="usernameColumn" prefWidth="305.0" text="Username" />
-            <TableColumn fx:id="roleColumn" prefWidth="246.0" text="Role" />
+            <TableColumn fx:id="idColumn" prefWidth="248.0" style="-fx-text-fill:black;" text="User ID" />
+            <TableColumn fx:id="usernameColumn" prefWidth="305.0" style="-fx-text-fill: black;" text="Username" />
+            <TableColumn fx:id="roleColumn" prefWidth="246.0" style="-fx-text-fill: black;" text="Role" />
         </columns>
     </TableView>
-   <Button layoutX="14.0" layoutY="14.0" onAction="#goBack" text="Back" />
+
+    <!-- Back Button -->
+    <Button layoutX="14.0" layoutY="14.0" onAction="#goBack" style="-fx-background-color: #333333; -fx-text-fill: #ffffff;" text="Back" />
 </AnchorPane>
